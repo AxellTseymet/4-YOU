@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4-YOU</title>
+<link rel="icon" href="avtor/skull.ico">
+<style>
+@font-face {
+    font-family: 'Warface';
+    src: url('avtor/Warface.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('avtor/flektarn.jpg') center/cover no-repeat fixed;
+    font-family: 'Warface', monospace;
+    color: #fff;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8) 70%, #000 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+header {
+    background: url('avtor/camo.jpg') center/cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 120px;
+    border-bottom: 5px solid #fc0;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    color: #000;
+    font-weight: bold;
+}
+
+#insane-text {
+    color: red;
+    font-size: .9rem;
+}
+
+.feed {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 5% 0;
+}
+
+.axell-msg {
+    display: flex;
+    gap: 20px;
+    max-width: 70%;
+    margin-bottom: 80px;
+}
+
+.ava-axell {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #000;
+    object-fit: cover;
+}
+
+.msg-bubble {
+    background: rgba(0,0,0,.9);
+    border: 3px solid #000;
+    padding: 20px;
+}
+
+.msg-author {
+    color: red;
+    margin-bottom: 8px;
+}
+
+.comic-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.comic-speech {
+    background: rgba(0,0,0,.95);
+    border: 4px solid #000;
+    padding: 20px;
+    max-width: 500px;
+    margin-right: 250px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.comic-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 40px;
+    border-width: 20px 0 0 20px;
+    border-style: solid;
+    border-color: #000 transparent transparent;
+}
+
+.essence {
+    max-height: 500px;
+    width: auto;
+    display: block;
+    margin-right: -40px;
+    margin-top: 10px;
+    animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%,100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.02); }
+}
+
+footer {
+    background: url('avtor/camo.jpg') center/cover;
+    border-top: 5px solid #fc0;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -30px;
+}
+
+.footer-rights {
+    border: 3px solid #000;
+    padding: 8px 20px;
+    display: inline-block;
+    background: rgba(0,0,0,.9);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+    .comic-speech {
+        margin-right: 0;
+        max-width: 90%;
+    }
+    .essence {
+        max-height: 350px;
+        margin-right: 0;
+    }
+    .axell-msg {
+        max-width: 100%;
+    }
+    footer {
+        margin-top: -20px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<div style="display:flex;align-items:center;gap:15px">
+<img src="avtor/skull.ico" height="70" alt="logo">
+<div>
+<div class="logo">4-YOU</div>
+<div id="insane-text">Поздравление именно для тебя</div>
+</div>
+</div>
+</header>
+
+<div class="feed">
+<div class="axell-msg">
+<img src="avtor/axell.jpg" class="ava-axell" alt="AXELL">
+<div class="msg-bubble">
+<span class="msg-author">Аксель</span>
+<p>Привет Артем , я создал этот сайт с Рихтером спицеально для тебя. С 14 летием тебя еще раз, также поменяй фамилию на маинкрафт :)</p>
+</div>
+</div>
+<div class="comic-scene">
+<div class="comic-speech">
+<span class="msg-author">Рихтер</span>
+<p>Поздравляю тебя , Артем. Желаю тебе счастья и успеха, много бабла и много телок</p>
+</div>
+</div>
+<div><img src="avtor/essence.png" class="essence" alt="Leshiy"></div>
+</div>
+</div>
+
+<footer>
+<div class="footer-rights">С др еще раз!</div>
+</footer>
+</body>
+</html>
